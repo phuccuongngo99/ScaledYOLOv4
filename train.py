@@ -309,6 +309,7 @@ def train(hyp, opt, device, tb_writer=None):
                                                  save_json=final_epoch and opt.data.endswith(os.sep + 'coco.yaml'),
                                                  model=ema.ema.module if hasattr(ema.ema, 'module') else ema.ema,
                                                  single_cls=opt.single_cls,
+                                                 verbose=True,
                                                  dataloader=testloader,
                                                  save_dir=log_dir)
 
